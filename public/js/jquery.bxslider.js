@@ -7,8 +7,8 @@
  *
  * Released under the MIT license - http://opensource.org/licenses/MIT
  */
-
-;(function($){
+alert('eee');
+$( document ).ready(function($){
 
 	var plugin = {};
 
@@ -1340,4 +1340,4 @@
 		return this;
 	}
 
-})(jQuery);
+});

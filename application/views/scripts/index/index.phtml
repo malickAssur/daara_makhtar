@@ -1,3 +1,25 @@
-<div id="slides">
-    <img src="<?php echo $this->baseUrl('/images/slideshow/example-slide-350-2.jpg'); ?>">
-  </div>
+
+    <div id="slides">
+      <img src="<?php echo $this->baseUrl('/images/slideshow/example-slide-350-2.jpg'); ?>">
+      <img src="<?php echo $this->baseUrl('/images/slideshow/example-slide-350-2.jpg'); ?>">
+    </div>
+
+<script src="/daara_makhtar/public/js/jquery.slides.min.js"></script>
+  <!-- End SlidesJS Required -->
+
+  <!-- SlidesJS Required: Initialize SlidesJS with a jQuery doc ready -->
+  <script>
+    $(function() {
+      $('#slides').slidesjs({
+        width: 940,
+        height: 350,
+        play: {
+          active: true,
+          auto: true,
+          interval: 4000,
+          swap: true
+        }
+      });
+    });
+  </script>
+  <!-- End SlidesJS Required -->
