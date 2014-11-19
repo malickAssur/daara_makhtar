@@ -1,26 +1,40 @@
 body {
   padding-top: 10px;
+  background: rgb(226, 226, 226);
+  background: white;
+  /*background: #82C46C;*/
 }
 [class*="col-"], footer {
   background-color: lightgrey;
   border: 1px solid #9E9E9E;
-  line-height: 40px;
+  /*line-height: 40px;*/
   text-align: center;
 }
+
 
 .container {
   padding: 15px;
   margin: 0 auto;
+  background-color: #FEFEFE;
   border : 1px solid #BBD2E1;
-  border-radius: 6px;
-  -webkit-box-shadow: 7px 5px 8px 0px #9E9E9E;
-  -moz-box-shadow:    7px 5px 8px 0px #9E9E9E;
-  box-shadow:         7px 5px 8px 0px #9E9E9E;
+  border : 1px solid #82C46C;
+  border-radius: 15px;
+  -webkit-box-shadow: 7px 5px 8px 0px #82C46C;
+  -moz-box-shadow:    7px 5px 8px 0px #82C46C;
+  box-shadow:         7px 5px 8px 0px #82C46C;
 }
 
-.header, .header div, .footer div {
+.header, .header div, .footer_mine div {
   background: #FEFEFE;
   border : 0px;
+  color: #1B4F08;
+}
+.header-contact {
+  color: #1b4f08;
+
+}
+.row.middle-content, .row.middle-content div {
+   background: #FEFEFE; 
 }
 
 .header, .firt_head {
@@ -33,4 +47,22 @@ body {
 
 .titre-site {
   font-size: 2.5em;
+  color: rgb(119, 119, 119);
+  color: #1B4F08;
+}
+
+.masthead {
+  margin-top: 15px;
+}
+
+.row.middle-content {
+  margin-top: 15px;
+  min-height: 250px;
+}
+
+.footer_mine {
+  font-size: 1.5em;
+  border-top: 1px solid #1b4f08; 
+  border-top: 1px solid #82C46C; 
+  color: #18391E;
 }
