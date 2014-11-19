@@ -81,7 +81,11 @@ body {
     }
 
     #slides {
-      display: none
+      display: none;
+      border: 1px solid #C1BFB1;
+       box-shadow: 7px 5px 8px 0px grey;
+       border-radius: 5px;
+       padding: 15px;
     }
 
     #slides .slidesjs-navigation {
