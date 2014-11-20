@@ -4,18 +4,68 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>Daara Mawlood</title>
-  <?php echo $this->headLink()->appendStylesheet('css/bootstrap.css') ?>
-  <?php echo $this->headLink()->appendStylesheet('css/bootstrap-theme.css') ?>
-  <?php echo $this->headLink()->appendStylesheet('css/justified-nav.css') ?>
+  <?php echo $this->headLink()->appendStylesheet($this->baseUrl('/css/bootstrap.css')); ?>
+  <?php echo $this->headLink()->appendStylesheet($this->baseUrl('/css/bootstrap-theme.css')); ?>
+  <?php echo $this->headLink()->appendStylesheet($this->baseUrl('/css/justified-nav.css')); ?>
   <?php //echo $this->headLink()->appendStylesheet('css/mlmlexample.css') ?>
-  <?php echo $this->headLink()->appendStylesheet('css/font-awesome.min.css') ?>
-  <?php echo $this->headLink()->appendStylesheet('css/main.css') ?>
+  <?php echo $this->headLink()->appendStylesheet($this->baseUrl('/css/font-awesome.min.css')); ?>
+  <?php //echo $this->headLink()->appendStylesheet('css/carroussel.css') ?>
+  <?php echo $this->headLink()->appendStylesheet($this->baseUrl('/css/main.css')); ?>
 
   <?php echo $this->headScript()->prependFile( $this->baseUrl('/js/jquery-1.9.1.min.js')) ?>
   <?php echo $this->headScript()->prependFile( $this->baseUrl('/js/bootstrap.js')) ?>
  
   <?php echo $this->headScript()->prependFile( $this->baseUrl('/js/main.js')) ?>
+<?php 
+  // Build navigation container
 
+/*
+        $container                         = new Zend_Navigation();
+        $t_pages                        = array();
+         
+        // Create two pages
+        $t_pages[] = array('id'         => 1,
+                           'order'         => 1,
+                           'label'         => 'Accueil',
+                           'title'         => 'Bienvenue sur mon site',
+                           'module'     => 'default',
+                           'controller' => 'index',
+                           'action'     => 'index');
+                         
+        $t_pages[] = array('id'         => 2,
+                           'order'         => 2,
+                           'label'         => 'Contact',
+                           'title'         => 'Contactez-moi',
+                           'module'     => 'default',
+                           'controller' => 'index',
+                           'action'     => 'contact');
+                         
+        // Add pages to container
+        $container->addPages($t_pages);
+ 
+        // Use navigation as menu
+        echo "<h1>Menu :</h1>";
+        echo $this->view->navigation($container)->menu()->render();
+ 
+        // Use navigation as breadcrumbs
+        echo "<h1>Fil d'Ariane :</h1>";
+        echo $this->view->navigation($container)->breadcrumbs()->setMinDepth(0)->setSeparator(" &raquo; ");
+ 
+        // Use navigation as sitemap
+        echo "<h1>Plan du site :</h1>";
+        echo $this->view->navigation($container)->sitemap()->setFormatOutput(true);*/
+
+
+        $aMenu = array(
+          'index' => array('class' => ''),
+          'galerie' => array('class' => ''),
+          'nous-contacter' => array('class' => ''),
+          'articles' => array('class' => ''),
+          '' => array('class' => ''),
+        );
+        $sControllerName = Zend_Controller_Front::getInstance()->getRequest()->getControllerName();
+        $aMenu[$sControllerName]['class'] = 'active';
+?>
     
 
  
@@ -25,27 +75,27 @@
 		<div class="row">
 			<div class="col-xs-12 header">
 				<div class="row firt_head">
-					<div class="col-sm-3"><a href="<?php echo $this->url(array('controller'=> 'index')); ?>"><img  class="img-responsive"src="<?php echo $this->baseUrl('/images/daara_logo.png'); ?>"></a></div>
+					<div class="col-sm-3"><a href="<?php echo $this->url(array('controller'=> 'index', 'action' => 'index')); ?>"><img  class="img-responsive" src="<?php echo $this->baseUrl('/images/daara_logo.png'); ?>"></a></div>
 					<div class="col-sm-6 titre-site" >
 						DAARA MODERNE INTERNAT
 							<br/>
 							ECOLE FRANCO – ARABE
 					</div>
 					<div class="col-sm-3 header-contact" >
-						<p class="cell"><img src="http://daaramawloud.free.fr/wp-content/themes/business-pro/images/call-us.png" class="call-us">&nbsp; Tel: 77608 14 95 / 77 646 31 28</p>
+            M. DIENG Directeur Général
+						<p class="cell"><img src="http://daaramawloud.free.fr/wp-content/themes/business-pro/images/call-us.png" class="call-us">&nbsp; Tel: +221 77 608 14 95 <br/>+221 77 646 31 28</p>
 					</div>
 				</div>
-    
       <div class="masthead">
         <!-- h3 class="text-muted">Project name</h3 -->
         <div role="navigation">
           <ul class="nav nav-justified">
-            <li class="active"><a href="#">Accueil</a></li>
-            <li><a href="#">Galerie</a></li>
+            <li class="<?php echo $aMenu['index']['class']; ?>"><a href="<?php echo $this->url(array('controller'=> 'index')); ?>">Accueil</a></li>
+            <li class="<?php echo $aMenu['galerie']['class']; ?>"><a href="<?php echo $this->url(array('controller'=> 'galerie', 'action' => 'index')); ?>">Galerie</a></li>
             <li><a href="#">Services</a></li>
             <li><a href="#">Downloads</a></li>
-            <li><a href="<?php echo $this->url(array('controller'=> 'index')); ?>">Articles</a></li>
-            <li><a href="<?php echo $this->url(array('controller'=> 'index')); ?>">Contact</a></li>
+            <li  class="<?php echo $aMenu['articles']['class']; ?>"><a href="<?php echo $this->url(array('controller'=> 'articles', 'action' => 'index')); ?>">Articles</a></li>
+            <li  class="<?php echo $aMenu['nous-contacter']['class']; ?>"><a href="<?php echo $this->url(array('controller'=> 'nous-contacter', 'action' => 'index')); ?>">Contact</a></li>
           </ul>
       </div>
           </div>

@@ -72,7 +72,10 @@ body {
   background-image: none;
   -webkit-box-shadow: inset 0 3px 7px rgba(0,0,0,.15);
           box-shadow: inset 0 3px 7px rgba(0,0,0,.15);
-  border-radius: 15px;
+  border-radius: 5px;
+  font-size: 1em;
+  text-decoration: underline;
+  font-style: italic;
 }
 
 
@@ -86,7 +89,10 @@ ul.nav.nav-justified li a:hover, ul.nav.nav-justified li a:focus{
   background-image: none;
   -webkit-box-shadow: inset 0 3px 7px rgba(0,0,0,.15);
           box-shadow: inset 0 3px 7px rgba(0,0,0,.15);
-  border-radius: 15px;
+  border-radius: 5px;
+  font-size: 1em;
+  text-decoration: underline;
+  font-style: italic;
 }
 
 
@@ -97,7 +103,11 @@ ul.nav.nav-justified li a:hover, ul.nav.nav-justified li a:focus{
 }
 
 .nav-justified > li.active:first-child  > a, .nav-justified > li.active:last-child > a{
-  border-radius: 15px;
+  border-radius: 5px;
+  font-size: 1em;
+  text-decoration: underline;
+  font-style: italic;
+
 }
 
 @media (min-width: 768px) {
