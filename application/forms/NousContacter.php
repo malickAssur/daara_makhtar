@@ -41,7 +41,8 @@ class Application_Form_NousContacter extends Zend_Form
 			'placeholder' => 'Email *',
 			'filters' => array('StringTrim'),
 			'validators' => array(
-			)
+                'EmailAddress',
+            )
 		
 		));
 
@@ -56,7 +57,9 @@ class Application_Form_NousContacter extends Zend_Form
 			'placeholder' => 'Numéro de téléphone *',
 			'filters' => array('StringTrim'),
 			'validators' => array(
-			)
+                            array('validator' => 'StringLength', 'options' => array('min'=>5, 'max'=>250, 'messages' => array('stringLengthTooShort' => 'The name is too short.'))) 
+                        ),
+		
 		
 		));
 
@@ -68,7 +71,9 @@ class Application_Form_NousContacter extends Zend_Form
 			'placeholder' => 'Site Web *',
 			'filters' => array('StringTrim'),
 			'validators' => array(
-			)
+	        array('Digits', false,
+	            array('messages' => array('notDigits' => 'Only digits are allowed here')))
+	   		),
 		
 		));
 
@@ -80,10 +85,31 @@ class Application_Form_NousContacter extends Zend_Form
 			'placeholder' => 'Votre Message *',
 			'filters' => array('StringTrim'),
 			'validators' => array(
-			)
+			                array('validator' => 'StringLength', 'options' => array(0, 500))
+			                )
 		
 		));
 
+		$this->addElement('checkbox', 'enCopie', array(
+			'id' => 'enCopie',
+			'class' => 'form-control',
+			'required' => true,
+		));
+			 // Un captcha
+        /*$this->addElement('captcha', 'captcha', array(
+            'label'      => 'Merci de confirmer que vous êtes humain, en saissisant les 5 caractères ci-dessous:',
+            'required'   => true,
+            'captcha'    => array(
+                'captcha' => 'Figlet',
+                'wordLen' => 5,
+                'timeout' => 300,
+            )
+        ));*/
+
+         // Et une protection anti CSRF
+        $this->addElement('hash', 'csrf', array(
+            'ignore' => true,
+        ));
 
 
 		
