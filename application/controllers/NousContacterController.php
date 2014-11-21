@@ -24,7 +24,7 @@ class NousContacterController extends Zend_Controller_Action
 	           $phone =  $formData['phone'];
 	           $siteWeb =  $formData['siteWeb'];
 	           $message =  $formData['message'];
-	           	$fullMessage= "".$message;
+           		$fullMessage= "".$message;
 				$mail = new Zend_Mail();
 				$mail->setBodyText($fullMessage );
 				$mail->setBodyHtml($fullMessage );
