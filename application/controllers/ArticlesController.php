@@ -16,7 +16,12 @@ class ArticlesController extends Zend_Controller_Action
 
     public function lireAction()
     {
-        // action body
+        $articleId = !is_null($this->getRequest()->getPost('id'))?$this->getRequest()->getPost('id'):NULL;
+        if(!is_null($articleId)) {
+            // récueration des infos de l'article
+            $dataArticle = $articleId;
+
+        }
     }
 
 
