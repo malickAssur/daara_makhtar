@@ -15,8 +15,8 @@ $( document ).ready(function() {
      item.addClass('active');
     }
   }
-});
-*/
+});*/
+
 /* activate the carousel */
 /*$('#modalCarousel').carousel({
 	interval:false

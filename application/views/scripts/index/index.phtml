@@ -1,76 +1,43 @@
 
-    <div class="row">
-	    <div id="slides">
-	      <img class="img-responsive img-thumbnail"  src="<?php echo $this->baseUrl('/images/slideshow/example-slide-350-2.jpg'); ?>">
-	      <img class="img-responsive img-thumbnail"  src="<?php echo $this->baseUrl('/images/slideshow/example-slide-350-3.jpg'); ?>">
-	      <img class="img-responsive img-thumbnail"  src="<?php echo $this->baseUrl('/images/slideshow/example-slide-350-4.jpg'); ?>">
-	      <img class="img-responsive img-thumbnail"  src="<?php echo $this->baseUrl('/images/slideshow/example-slide-350-2.jpg'); ?>">
-	      <img class="img-responsive img-thumbnail"  src="<?php echo $this->baseUrl('/images/slideshow/example-slide-350-4.jpg'); ?>">
-	    </div>
-    </div>
+<div class="row">
+	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+      </ol>
 
-<br/>
-<br/>
-
-    <div class="row">
-    	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-  </ol>
-
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner">
-    <div class="item active">
-      <img src="<?php echo $this->baseUrl('/images/slideshow/example-slide-350-2.jpg'); ?>" alt="...">
-      <div class="carousel-caption">
-      	<h3>Bienvenue</h3>
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="<?php echo $this->baseUrl('/images/slideshow/example-slide-350-2.jpg'); ?>" alt="...">
+          <div class="carousel-caption">
+          	<h3>Bienvenue</h3>
+          </div>
+        </div>
+        <div class="item">
+          <img src="<?php echo $this->baseUrl('/images/slideshow/photo1.jpg'); ?>" alt="...">
+          <div class="carousel-caption">
+          	<h3>Complexe Islamique</h3>
+          </div>
+        </div>
+        <div class="item">
+          <img src="<?php echo $this->baseUrl('/images/slideshow/example-slide-350-3.jpg'); ?>" alt="..."> <!-- image taille 1200x315 -->
+          <div class="carousel-caption">
+          	<h3>Daara Mawloud</h3>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="item">
-      <img src="<?php echo $this->baseUrl('/images/slideshow/photo1.jpg'); ?>" alt="...">
-      <div class="carousel-caption">
-      	<h3>Complexe Islamique</h3>
-      </div>
-    </div>
-    <div class="item">
-      <img src="<?php echo $this->baseUrl('/images/slideshow/example-slide-350-3.jpg'); ?>" alt="..."> <!-- image taille 1200x315 -->
-      <div class="carousel-caption">
-      	<h3>Daara Mawloud</h3>
-      </div>
-    </div>
-  </div>
 
-  <!-- Controls -->
-  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left"></span>
-  </a>
-  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right"></span>
-  </a>
-</div> <!-- Carousel -->
-    </div>
+      <!-- Controls -->
+      <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+      </a>
+      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+      </a>
+    </div> <!-- Carousel -->
+</div>
 
     
-
-<script src="/daara_makhtar/public/js/jquery.slides.min.js"></script>
-  <!-- End SlidesJS Required -->
-
-  <!-- SlidesJS Required: Initialize SlidesJS with a jQuery doc ready -->
-  <script>
-    $(function() {
-      $('#slides').slidesjs({
-        width: 940,
-        height: 350,
-        play: {
-          active: true,
-          auto: true,
-          interval: 4000,
-          swap: true
-        }
-      });
-    });
-  </script>
-  <!-- End SlidesJS Required -->
