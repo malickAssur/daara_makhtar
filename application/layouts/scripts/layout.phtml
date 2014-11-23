@@ -61,6 +61,8 @@
           'galerie' => array('class' => ''),
           'nous-contacter' => array('class' => ''),
           'articles' => array('class' => ''),
+          'services' => array('class' => ''),
+          'qui-sommes-nous' => array('class' => ''),
           '' => array('class' => ''),
         );
         $sControllerName = Zend_Controller_Front::getInstance()->getRequest()->getControllerName();
@@ -92,10 +94,11 @@
           <ul class="nav nav-justified">
             <li class="<?php echo $aMenu['index']['class']; ?>"><a href="<?php echo $this->url(array('controller'=> 'index')); ?>">Accueil</a></li>
             <li class="<?php echo $aMenu['galerie']['class']; ?>"><a href="<?php echo $this->url(array('controller'=> 'galerie', 'action' => 'index')); ?>">Galerie</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Downloads</a></li>
+            <li class="<?php echo $aMenu['services']['class']; ?>"><a href="<?php echo $this->url(array('controller'=> 'services', 'action' => 'index')); ?>">Services</a></li>
+            <!--li><a href="<?php //echo $this->url(array('controller'=> 'download', 'action' => 'index')); ?>">Downloads</a></li -->
             <li  class="<?php echo $aMenu['articles']['class']; ?>"><a href="<?php echo $this->url(array('controller'=> 'articles', 'action' => 'index')); ?>">Articles</a></li>
             <li  class="<?php echo $aMenu['nous-contacter']['class']; ?>"><a href="<?php echo $this->url(array('controller'=> 'nous-contacter', 'action' => 'index')); ?>">Contact</a></li>
+            <li  class="<?php echo $aMenu['qui-sommes-nous']['class']; ?>"><a href="<?php echo $this->url(array('controller'=> 'qui-sommes-nous', 'action' => 'index')); ?>">Qui sommes nous</a></li>
           </ul>
       </div>
           </div>
